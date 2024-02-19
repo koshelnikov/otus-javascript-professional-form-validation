@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormArray, FormBuilder} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-complex-example',
@@ -16,7 +16,7 @@ export class ReactiveFormComplexExampleComponent {
   constructor(private fb: FormBuilder) {
   }
 
-  get friends(): FormArray {
+  get friends(): FormArray<FormControl> {
     return this.userForm.get('friends') as FormArray;
   }
 
